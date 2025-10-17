@@ -2,8 +2,7 @@ package D.S.Store.B0.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,47 +21,54 @@ public class LoginController {
     @Autowired
     private LoginRepositories loginRepositories;
 
-    //obtener todos los logins
+    // Obtener todos los logins
     @GetMapping
-    public List <Login> getAllLogins () {
+    @PreAuthorize("hasRole('GERENTE')")
+    public List<Login> getAllLogins() {
         return loginRepositories.findAll();
-    };
+    }
 
-    //obtener un login por id
+    // Obtener un login por ID
     @GetMapping("/{loginID}")
-    public Login getLoginById (@PathVariable Long loginID) {
+    @PreAuthorize("hasRole('GERENTE')")
+    public Login getLoginById(@PathVariable Long loginID) {
         return loginRepositories.findById(loginID).orElse(null);
-    };
+    }
 
-     //crear login
+    // Crear un nuevo login (registro de usuario)
     @PostMapping
-    public Login createLogin (@RequestBody Login login) {
+    public Login createLogin(@RequestBody Login login) {
+        // Validar que el cargo sea válido
+        if (login.getCargo() == null || 
+            (!login.getCargo().equals("GERENTE") && !login.getCargo().equals("EMPLEADO"))) {
+            throw new IllegalArgumentException("El cargo debe ser 'GERENTE' o 'EMPLEADO'");
+        }
+        
+        // Verificar si el usuario ya existe
+        Login existingLogin = loginRepositories.findByUsuarioLoginAndPasswordLogin(
+            login.getUsuarioLogin(), 
+            login.getPasswordLogin()
+        );
+        
+        if (existingLogin != null) {
+            throw new IllegalArgumentException("El usuario ya existe");
+        }
+        
         return loginRepositories.save(login);
-    };
+    }
 
-    //actualizar login
+    // Actualizar un login
     @PutMapping("/{loginID}")
-    public Login updateLogin (@PathVariable Long loginID, @RequestBody Login login) {
+    @PreAuthorize("hasRole('GERENTE')")
+    public Login updateLogin(@PathVariable Long loginID, @RequestBody Login login) {
         login.setLoginID(loginID);
         return loginRepositories.save(login);
-    };
+    }
 
-    //eliminar login
+    // Eliminar un login
     @DeleteMapping("/{loginID}")
-    public void deleteLogin (@PathVariable Long loginID) {
+    @PreAuthorize("hasRole('GERENTE')")
+    public void deleteLogin(@PathVariable Long loginID) {
         loginRepositories.deleteById(loginID);
-    };
-
-    //validar si el usuario existe en la base de datos
-    @PostMapping("/validar")
-    public ResponseEntity <String> validateLogin (@RequestBody Login login) {
-        Login foundLogin = loginRepositories.findByUsuarioLoginAndPasswordLogin(login.getUsuarioLogin(),login.getPasswordLogin());
-
-        if (foundLogin != null) {
-            return ResponseEntity.status(HttpStatus.OK).body("Exito");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error: Ingreso no autorizado");
-        }
-    };
-
-};
+    }
+}

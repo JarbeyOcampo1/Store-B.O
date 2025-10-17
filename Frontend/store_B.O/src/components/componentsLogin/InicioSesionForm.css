@@ -52,8 +52,21 @@
     box-sizing: border-box;
 }
 
+/* Estilos para el selector (select) */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cf911d;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: white;
+    cursor: pointer;
+}
+
 /* Cuando el input está enfocado */
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
     border-color: #fda809;
     outline: none;
 }
@@ -126,4 +139,51 @@
 /* Efecto al pasar el mouse por el botón cancelar */
 .cancel-button:hover {
     background-color: #222
+}
+
+/* Estilos para la lista de usuarios */
+.users-list {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.users-list h3 {
+    color: #cf911d;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.user-card {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #cf911d;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-card p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.user-card strong {
+    color: #cf911d;
+    font-weight: 600;
+}
+
+/* Responsive para la lista de usuarios */
+@media (max-width: 768px) {
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
 }
