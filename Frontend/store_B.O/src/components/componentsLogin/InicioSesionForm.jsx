@@ -5,8 +5,10 @@ import "./InicioSesionForm.css";
 
 function InicioSesionForm () {
     // Estados para manejar datos
-    const [error,setError] = useState ("");
-    const [loading,setLoading] = useState (false);
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [usuarioLogin, setUsuarioLogin] = useState("");
+    const [passwordLogin, setPasswordLogin] = useState("");
 
     // Usamos el hook useNavigate para navegar a otras rutas de la aplicación.
     const navigate = useNavigate(); 
@@ -18,10 +20,12 @@ function InicioSesionForm () {
         setError(""); 
         
         try {
-            // Crear un objeto FormData para obtener los valores del formulario.
-            const formData = new FormData(event.target);
-            const usuarioLogin = formData.get("usuarioLogin");
-            const passwordLogin = formData.get("passwordLogin");
+            // Validar que los campos no estén vacíos
+            if (!usuarioLogin.trim() || !passwordLogin.trim()) {
+                setError("Por favor, complete todos los campos.");
+                return;
+            }
+
             // peticion a la API para validar el inicio
             const response = await axios.post("http://localhost:8080/api/auth/login", {
                 usuarioLogin, 
@@ -34,6 +38,12 @@ function InicioSesionForm () {
                 localStorage.setItem("token", response.data.token); // guardar el token en el storage local
                 localStorage.setItem("usuario", response.data.usuario); // guardar el usuario
                 localStorage.setItem("cargo", response.data.cargo); // guardar el cargo
+                
+                // Limpiar el formulario
+                setUsuarioLogin("");
+                setPasswordLogin("");
+                setError("");
+                
                 navigate("/Principal"); // Redirigir a la página principal
             }
         } catch (error) {
@@ -63,11 +73,25 @@ function InicioSesionForm () {
                 {/* Campos del formulario para ingresar usuario y contraseña */}
                 <div className="form-group">
                     <label htmlFor="usuario"> Usuario: </label>
-                    <input type="text" name="usuarioLogin" placeholder="Nombre del usuario" required/>
+                    <input 
+                        type="text" 
+                        name="usuarioLogin" 
+                        placeholder="Nombre del usuario" 
+                        value={usuarioLogin}
+                        onChange={(e) => setUsuarioLogin(e.target.value)}
+                        required
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password"> Contraseña: </label>
-                    <input type="password" name="passwordLogin" placeholder="Contraseña" required/>
+                    <input 
+                        type="password" 
+                        name="passwordLogin" 
+                        placeholder="Contraseña" 
+                        value={passwordLogin}
+                        onChange={(e) => setPasswordLogin(e.target.value)}
+                        required
+                    />
                 </div>
                 <div className="login-actions">
                     <button type="button" className="cancel-button" onClick={() => navigate("/Logins")}> Cancelar </button>

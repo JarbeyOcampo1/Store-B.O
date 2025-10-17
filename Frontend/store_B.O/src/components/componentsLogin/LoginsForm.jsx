@@ -28,6 +28,7 @@ function LoginsForm ({onSubmit, initialLogin}) {
         onSubmit(resData); // Llamar a la función onSubmit con los datos del formulario
         setUsuarioLogin(""); 
         setPasswordLogin("");
+        setCargo(""); // Limpiar también el campo de cargo
     };
 
     return (

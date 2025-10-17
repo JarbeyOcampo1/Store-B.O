@@ -4,8 +4,8 @@ import LoginsForm from "./LoginsForm";
 
 function Logins () {
     // crear un estado para guardar los datos
-    const setLogin = useState ([]);
-    const [loading,setLoading] = useState(false);
+    const [logins, setLogins] = useState([]);
+    const [loading, setLoading] = useState(false);
 
      // acualiza por cada login nuevo
     useEffect(() => {
@@ -62,7 +62,23 @@ function Logins () {
         <div className="logins-container">
             <br />
             {/* Renderizado de los inputs para el registro de un nuevo login */}
-            <LoginsForm onSubmit={createLogin} loading={loading}/> 
+            <LoginsForm onSubmit={createLogin} loading={loading}/>
+            
+            {/* Lista de usuarios registrados */}
+            {logins.length > 0 && (
+                <div className="users-list">
+                    <h3>Usuarios Registrados:</h3>
+                    <div className="users-grid">
+                        {logins.map((login) => (
+                            <div key={login.loginID} className="user-card">
+                                <p><strong>Usuario:</strong> {login.usuarioLogin}</p>
+                                <p><strong>Cargo:</strong> {login.cargo}</p>
+                                <p><strong>ID:</strong> {login.loginID}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
