@@ -60,6 +60,12 @@ function Principal() {
             <main className="principal-main">
                 <div className="welcome-section">
                     <h2>Panel de Control</h2>
+                    <p>Bienvenido al sistema de gestión Store B.O</p>
+                    <div className="user-details">
+                        <p><strong>Usuario:</strong> {usuario}</p>
+                        <p><strong>Cargo:</strong> {cargo}</p>
+                        <p><strong>Permisos:</strong> {cargo === 'GERENTE' ? 'Acceso completo' : 'Acceso limitado'}</p>
+                    </div>
                     <p>Selecciona una opción para gestionar el sistema:</p>
                 </div>
 

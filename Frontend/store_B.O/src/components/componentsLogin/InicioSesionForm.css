@@ -52,8 +52,21 @@
     box-sizing: border-box;
 }
 
+/* Estilos para el selector (select) */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cf911d;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: white;
+    cursor: pointer;
+}
+
 /* Cuando el input está enfocado */
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
     border-color: #fda809;
     outline: none;
 }

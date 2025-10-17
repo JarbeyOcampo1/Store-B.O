@@ -43,7 +43,11 @@ function LoginsForm ({onSubmit, initialLogin}) {
                     </div>
                     <div className="form-group">
                         <label> Cargo: </label>
-                        <input type="text" placeholder="Cargo" value={cargo} onChange={(e) => setCargo(e.target.value)} required/>
+                        <select value={cargo} onChange={(e) => setCargo(e.target.value)} required>
+                            <option value="">Seleccione un cargo</option>
+                            <option value="GERENTE">Gerente</option>
+                            <option value="EMPLEADO">Empleado</option>
+                        </select>
                     </div>
                     <div className="form-group">
                         <label> Contraseña: </label>
