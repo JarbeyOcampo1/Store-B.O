@@ -23,19 +23,30 @@ function InicioSesionForm () {
             const usuarioLogin = formData.get("usuarioLogin");
             const passwordLogin = formData.get("passwordLogin");
             // peticion a la API para validar el inicio
-            const response = await axios.post("http://localhost:8080/api/logins/validar", {
+            const response = await axios.post("http://localhost:8080/api/auth/login", {
                 usuarioLogin, 
                 passwordLogin,
             });
    
-            // verificar si la respuesta es exitosa y contiene el mensaje esperado
-            if (response.status === 200 && response.data.includes("Exito")){
+            // verificar si la respuesta es exitosa y contiene el token
+            if (response.status === 200 && response.data.token){
                 console.log("Inicio de sesion exitoso");
-                localStorage.setItem("Exito", response.data.token); // guardar el token en el storage local
+                localStorage.setItem("token", response.data.token); // guardar el token en el storage local
+                localStorage.setItem("usuario", response.data.usuario); // guardar el usuario
+                localStorage.setItem("cargo", response.data.cargo); // guardar el cargo
                 navigate("/Principal"); // Redirigir a la página principal
             }
         } catch (error) {
-            setError("Credenciales incorrectas, Intente otra vez");
+            console.error("Error en login:", error);
+            if (error.response?.status === 401) {
+                setError("Credenciales incorrectas. Verifique su usuario y contraseña.");
+            } else if (error.response?.status === 500) {
+                setError("Error del servidor. Intente más tarde.");
+            } else if (error.code === 'NETWORK_ERROR' || !error.response) {
+                setError("Error de conexión. Verifique que el servidor esté funcionando.");
+            } else {
+                setError("Error inesperado. Intente nuevamente.");
+            }
         } finally {
             setLoading(false); // Finaliza el estado de carga
         }
@@ -59,7 +70,7 @@ function InicioSesionForm () {
                     <input type="password" name="passwordLogin" placeholder="Contraseña" required/>
                 </div>
                 <div className="login-actions">
-                    <button type="button" className="cancel-button" onClick={oncancel}> Cancelar </button>
+                    <button type="button" className="cancel-button" onClick={() => navigate("/Logins")}> Cancelar </button>
                     <button type="submit" className="form-button" disabled={loading}> {loading ? "Cargando...":"Iniciar Sesión" } </button>
                 </div>
                 {/* Enlace para redirigir al usuario a la página de registro */}

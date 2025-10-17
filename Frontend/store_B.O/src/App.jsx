@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<InicioSesionForm />} />
         <Route path="/Logins" element={<Logins />} />
+        <Route path="/Principal" element={<Principal />} />
       </Routes>
     </BrowserRouter>
   );
