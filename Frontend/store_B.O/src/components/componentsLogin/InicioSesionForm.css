@@ -1,0 +1,129 @@
+/* Título del formulario */
+.logins-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #cf911d; /* color elegante */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Contenedor principal del formulario */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+/* Estilos del formulario */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color:  lab(92.35% 0 -0.01 / 0.767);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 1px solid #cf911d;
+}
+
+/* Cada grupo de etiqueta + input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+/* Estilos para los inputs */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cf911d;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Cuando el input está enfocado */
+.form-group input:focus {
+    border-color: #fda809;
+    outline: none;
+}
+
+/* Contenedor de los botones */
+.login-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Estilos del mensaje de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Botón de enviar */
+.form-button {
+    width: 48%;
+    padding: 12px;
+    background-color: #cf911d;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Efecto al pasar el mouse por el botón */
+.form-button:hover {
+    background-color: #222
+}
+
+/* Estilos para el enlace de "Registrarse" */
+.register-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #cf911d;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón de cancelar */
+.cancel-button {
+    width: 48%;
+    padding: 12px;
+    background-color: #cf911d;
+    border: none;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Efecto al pasar el mouse por el botón cancelar */
+.cancel-button:hover {
+    background-color: #222
+}
