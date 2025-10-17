@@ -75,9 +75,11 @@ function useAuth() {
   return { auth, setAuth, headers }
 }
 
-function Clientes({ headers, canWrite }) {
+function Clientes({ headers, canCreateUpdate, canDelete }) {
   const [clientes, setClientes] = useState([])
   const [nuevo, setNuevo] = useState({ nombreCliente: '', cedulaCliente: '' })
+  const [editingId, setEditingId] = useState(null)
+  const [edit, setEdit] = useState({ nombreCliente: '', cedulaCliente: '' })
 
   const fetchAll = async () => {
     const res = await fetch(`${API_BASE}/api/clientes`, { headers })
@@ -108,22 +110,75 @@ function Clientes({ headers, canWrite }) {
     else alert('No autorizado')
   }
 
+  const startEdit = (c) => {
+    setEditingId(c.clienteID)
+    setEdit({ nombreCliente: c.nombreCliente || '', cedulaCliente: c.cedulaCliente || '' })
+  }
+
+  const cancelarEdit = () => {
+    setEditingId(null)
+    setEdit({ nombreCliente: '', cedulaCliente: '' })
+  }
+
+  const guardarEdit = async (c) => {
+    const payload = { ...c, ...edit }
+    const res = await fetch(`${API_BASE}/api/clientes/${c.clienteID}`, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify(payload),
+    })
+    if (res.ok) {
+      cancelarEdit()
+      fetchAll()
+    } else {
+      alert('No autorizado')
+    }
+  }
+
   return (
     <div style={{ border: '1px solid #ddd', padding: 12, borderRadius: 8 }}>
       <h3>Clientes</h3>
       <ul>
         {clientes.map((c) => (
           <li key={c.clienteID}>
-            {c.nombreCliente || 'Sin nombre'} - {c.cedulaCliente || 'Sin cédula'}
-            {canWrite && (
-              <button style={{ marginLeft: 8 }} onClick={() => eliminar(c.clienteID)}>
-                Eliminar
-              </button>
+            {editingId === c.clienteID ? (
+              <span>
+                <input
+                  placeholder="Nombre"
+                  value={edit.nombreCliente}
+                  onChange={(e) => setEdit({ ...edit, nombreCliente: e.target.value })}
+                  style={{ marginRight: 6 }}
+                />
+                <input
+                  placeholder="Cédula"
+                  value={edit.cedulaCliente}
+                  onChange={(e) => setEdit({ ...edit, cedulaCliente: e.target.value })}
+                  style={{ marginRight: 6 }}
+                />
+                {canCreateUpdate && (
+                  <>
+                    <button onClick={() => guardarEdit(c)} style={{ marginRight: 6 }}>Guardar</button>
+                    <button onClick={cancelarEdit}>Cancelar</button>
+                  </>
+                )}
+              </span>
+            ) : (
+              <span>
+                {c.nombreCliente || 'Sin nombre'} - {c.cedulaCliente || 'Sin cédula'}
+                {canCreateUpdate && (
+                  <button style={{ marginLeft: 8 }} onClick={() => startEdit(c)}>Editar</button>
+                )}
+                {canDelete && (
+                  <button style={{ marginLeft: 8 }} onClick={() => eliminar(c.clienteID)}>
+                    Eliminar
+                  </button>
+                )}
+              </span>
             )}
           </li>
         ))}
       </ul>
-      {canWrite && (
+      {canCreateUpdate && (
         <div style={{ display: 'flex', gap: 8 }}>
           <input
             placeholder="Nombre"
@@ -144,7 +199,10 @@ function Clientes({ headers, canWrite }) {
 
 function App() {
   const { auth, setAuth, headers } = useAuth()
-  const isGerente = auth?.cargo?.toLowerCase() === 'gerente'
+  const cargoLc = auth?.cargo?.toLowerCase()
+  const isGerente = cargoLc === 'gerente'
+  const canCreateUpdate = cargoLc === 'gerente' || cargoLc === 'empleado'
+  const canDelete = isGerente
 
   if (!auth) {
     return <LoginForm onSuccess={setAuth} />
@@ -158,11 +216,9 @@ function App() {
         </div>
         <button onClick={() => setAuth(null)}>Salir</button>
       </div>
-      <Clientes headers={headers} canWrite={isGerente} />
+      <Clientes headers={headers} canCreateUpdate={canCreateUpdate} canDelete={canDelete} />
       {!isGerente && (
-        <div style={{ color: '#666' }}>
-          Acceso limitado. Solo puedes ver información.
-        </div>
+        <div style={{ color: '#666' }}>Acceso limitado: no puedes eliminar.</div>
       )}
     </div>
   )

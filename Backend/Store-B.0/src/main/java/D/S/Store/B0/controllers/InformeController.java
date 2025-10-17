@@ -37,14 +37,14 @@ public class InformeController {
 
     //crear informe
     @PostMapping
-    @PreAuthorize("hasRole('GERENTE')")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Informe createInforme (@RequestBody Informe informe) {
         return informeRepositories.save(informe);
     };
 
     //Actualizar informe
     @PutMapping("/{informeID}")
-    @PreAuthorize("hasRole('GERENTE')")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Informe updateInforme (@PathVariable Long informeID, @RequestBody Informe informe) {
         informe.setInformeID(informeID);
         return informeRepositories.save(informe);

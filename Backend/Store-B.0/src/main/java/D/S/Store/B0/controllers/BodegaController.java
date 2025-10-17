@@ -37,14 +37,14 @@ public class BodegaController {
 
     //crear bodega
     @PostMapping
-    @PreAuthorize("hasRole('GERENTE')")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Bodega createBodega (@RequestBody Bodega bodega) {
         return bodegaRepositories.save(bodega);
     };
 
     //Actualizar cliente
     @PutMapping("/{bodegaID}")
-    @PreAuthorize("hasRole('GERENTE')")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Bodega updateBodega (@PathVariable Long bodegaID, @RequestBody Bodega bodega) {
         bodega.setBodegaID(bodegaID);
         return bodegaRepositories.save(bodega);

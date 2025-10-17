@@ -37,14 +37,14 @@ public class ClienteController {
 
     //Crear cliente
     @PostMapping
-    @PreAuthorize("hasRole('GERENTE')")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Cliente createCliente (@RequestBody Cliente cliente) {
         return clienteRepositories.save(cliente);
     };
 
     //Actualizar cliente
     @PutMapping("/{clienteID}")
-    @PreAuthorize("hasRole('GERENTE')")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Cliente updateCliente (@PathVariable Long clienteID, @RequestBody Cliente cliente) {
         cliente.setClienteID(clienteID);
         return clienteRepositories.save(cliente);
