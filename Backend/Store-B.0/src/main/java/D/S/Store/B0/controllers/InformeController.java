@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
 import D.S.Store.B0.models.Informe;
 import D.S.Store.B0.repositories.InformeRepositories;
 
@@ -22,24 +23,28 @@ public class InformeController {
 
     //obtener todos los informes
     @GetMapping
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public List <Informe> getAllInformes () {
         return informeRepositories.findAll();
     };
 
     //obtener una informe por id
     @GetMapping("/{informeID}")
+    @PreAuthorize("hasAnyRole('GERENTE','EMPLEADO')")
     public Informe getInformeById (@PathVariable Long informeID) {
         return informeRepositories.findById(informeID).orElse(null);
     };
 
     //crear informe
     @PostMapping
+    @PreAuthorize("hasRole('GERENTE')")
     public Informe createInforme (@RequestBody Informe informe) {
         return informeRepositories.save(informe);
     };
 
     //Actualizar informe
     @PutMapping("/{informeID}")
+    @PreAuthorize("hasRole('GERENTE')")
     public Informe updateInforme (@PathVariable Long informeID, @RequestBody Informe informe) {
         informe.setInformeID(informeID);
         return informeRepositories.save(informe);
@@ -47,6 +52,7 @@ public class InformeController {
 
     //eliminar informe
     @DeleteMapping("/{informeID}")
+    @PreAuthorize("hasRole('GERENTE')")
     public void deleteInforme (@PathVariable Long informeID) {
         informeRepositories.deleteById(informeID);
     };
