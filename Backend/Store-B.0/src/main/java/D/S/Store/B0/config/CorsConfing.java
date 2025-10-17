@@ -15,6 +15,8 @@ public class CorsConfing implements WebMvcConfigurer{
         registry.addMapping("/**")
             .allowedOrigins("http://localhost:5173") // URL del front
             .allowedMethods("*") // Metodos permitidos desde el front
+            .allowedHeaders("*") // Permitir todos los headers
+            .exposedHeaders("Authorization")
             .allowCredentials(true); // Permitir credenciales
     };
 };
