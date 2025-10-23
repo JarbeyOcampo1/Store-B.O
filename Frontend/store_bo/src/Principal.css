@@ -1,0 +1,161 @@
+/* Paleta de colores */
+:root {
+  --primary-color: #ff882e; /* Naranja cálido */
+  --secondary-color: #4184c7; /* Azul cálido */
+  --background-light: #ece5e5; /* Gris claro */
+  --text-dark: #333;
+}
+
+/* Contenedor principal */
+.Container_Principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--background-light);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Tamaño del logo */
+.logo-container img {
+  height: 60px;
+}
+
+/* Barra de navegación */
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+/* Elementos de navegación y botón de registro */
+.navbar li,
+.register-btn {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+/* Botón de salir */
+.salir-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Título animado */
+.title-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.title span {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  animation: bounce 1s infinite alternate;
+}
+
+/* Animación bounce */
+@keyframes bounce {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Carrusel */
+.carousel {
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--primary-color);
+}
+
+/* Imágenes del carrusel */
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto sobre el carrusel */
+.carousel-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 40%;
+}
+
+/* Título del carrusel */
+.carousel-text h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Descripción del carrusel */
+.carousel-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Botón del carrusel */
+.cta-btn {
+  background-color: #ff882e;
+  color: var(--background-light);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Imagen del carrusel */
+.carousel-image {
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  padding: 8px 0;
+  background-color: var(--background-light);
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Texto del pie de página */
+.footer h2 {
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+
+/* Iconos de redes sociales */
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+/* Configuración global */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

@@ -1,129 +1,79 @@
-/* Título del formulario */
-.logins-title {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    color: #cf911d; /* color elegante */
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Contenedor principal del formulario */
+/* Contenedor centrado */
 .login-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la pantalla */
 }
 
-/* Estilos del formulario */
+/* Formulario */
 .login-form {
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    background-color:  lab(92.35% 0 -0.01 / 0.767);
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border: 1px solid #cf911d;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center; /* Centra todo el contenido */
 }
 
-/* Cada grupo de etiqueta + input */
+/* Título */
+.logins-title {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Inputs y labels centrados */
 .form-group {
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Coloca label arriba del input */
+  align-items: center; /* Centra ambos horizontalmente */
+  margin-bottom: 15px;
 }
 
-/* Estilos para las etiquetas */
 .form-group label {
-    display: block;
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #000000;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  text-align: center;
 }
 
-/* Estilos para los inputs */
 .form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cf911d;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
+  width: 80%; /* Más estrecho para centrado */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center; /* Texto dentro del input centrado */
 }
 
-/* Cuando el input está enfocado */
-.form-group input:focus {
-    border-color: #fda809;
-    outline: none;
-}
-
-/* Contenedor de los botones */
-.login-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-/* Estilos del mensaje de error */
-.error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Botón de enviar */
+/* Botón largo */
 .form-button {
-    width: 48%;
-    padding: 12px;
-    background-color: #cf911d;
-    border: none;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 80%; /* Igual ancho que los inputs */
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 0;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Efecto al pasar el mouse por el botón */
 .form-button:hover {
-    background-color: #222
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
-/* Estilos para el enlace de "Registrarse" */
+/* Enlace centrado */
 .register-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    color: #cf911d;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.register-link:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para el botón de cancelar */
-.cancel-button {
-    width: 48%;
-    padding: 12px;
-    background-color: #cf911d;
-    border: none;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-/* Efecto al pasar el mouse por el botón cancelar */
-.cancel-button:hover {
-    background-color: #222
+  display: block;
+  margin-top: 15px;
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }

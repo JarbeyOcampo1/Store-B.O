@@ -60,7 +60,6 @@ function InicioSesionForm () {
                     <input type="password" name="passwordLogin" placeholder="Contraseña" required/>
                 </div>
                 <div className="login-actions">
-                    <button type="button" className="cancel-button" onClick={oncancel}> Cancelar </button>
                     <button type="submit" className="form-button" disabled={loading}> {loading ? "Cargando...":"Iniciar Sesión" } </button>
                 </div>
                 {/* Enlace para redirigir al usuario a la página de registro */}
