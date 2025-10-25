@@ -3,6 +3,7 @@ import "./Principal.css";
 import { useState, useEffect } from "react";
 import logo1 from "./components/images/logo1.png";
 import closeSession from "../closeSession";
+import { useNavigate, Link } from "react-router-dom";
 
 /* Datos del carrusel */
 const slides = [
@@ -30,6 +31,8 @@ function Principal() {
     /* Estado para controlar el índice actual del carrusel */
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const navigate = useNavigate();
+
     /* Efecto para cambiar automáticamente las imágenes del carrusel */
     useEffect(() => {
         const interval = setInterval(() => {
@@ -45,6 +48,11 @@ function Principal() {
     /* Función para cerrar sesión */
     const handleLogout = closeSession();
 
+    const handleRedirect = () => {
+        if (currentIndex === 0) navigate("/Cliente");
+        if (currentIndex === 1) navigate("/Bodega");
+    };
+
     return (
         <div>
             {/* Contenedor principal (header con logo y navegación) */}
@@ -55,8 +63,8 @@ function Principal() {
             {/* Barra de navegación */}
             <nav className="navbar">
                 <ul>
-                    <li>Clientes</li>
-                    <li>Bodegas</li>
+                    <li><Link to="/Cliente">Clientes</Link></li>
+                    <li><Link to="/Bodega">Bodegas</Link></li>
                     <li>Informes</li>
                     <li><button onClick={handleLogout} className="salir-btn"> Salir</button></li>
                 </ul>
@@ -73,7 +81,7 @@ function Principal() {
                 <div className="carousel-text">
                     <h1>{title}</h1>
                     <p>{text}</p>
-                    <button className="cta-btn">{button}</button>
+                    <button className="cta-btn" onClick={handleRedirect}>{button}</button>
                 </div>
             <div className="carousel-image">
                 <img src={img} alt={title} />

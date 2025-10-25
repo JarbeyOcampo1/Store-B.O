@@ -17,7 +17,7 @@
   text-align: center; /* Centra todo el contenido */
 }
 
-/* Título */
+/* Título del formulario */
 .logins-title {
   color: var(--secondary-color);
   margin-bottom: 20px;
@@ -25,14 +25,15 @@
   font-weight: bold;
 }
 
-/* Inputs y labels centrados */
+/* Contenedor de inputs y labels */
 .form-group {
   display: flex;
-  flex-direction: column; /* Coloca label arriba del input */
+  flex-direction: column; /* Coloca el label arriba del input */
   align-items: center; /* Centra ambos horizontalmente */
   margin-bottom: 15px;
 }
 
+/* Estilo de los labels */
 .form-group label {
   font-weight: 500;
   margin-bottom: 8px;
@@ -40,35 +41,37 @@
   text-align: center;
 }
 
+/* Estilo de los inputs */
 .form-group input {
-  width: 80%; /* Más estrecho para centrado */
+  width: 80%; /* Mismo ancho que el botón */
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
-  text-align: center; /* Texto dentro del input centrado */
+  text-align: center; /* Centra el texto dentro del input */
 }
 
-/* Botón largo */
+/* Botón de envío */
 .form-button {
-  width: 80%; /* Igual ancho que los inputs */
+  width: 80%;
   background-color: var(--primary-color);
   color: white;
   padding: 12px 0;
   border: none;
   border-radius: 20px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: pointer; 
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Efecto hover del botón */
 .form-button:hover {
   background-color: white;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
 }
 
-/* Enlace centrado */
+/* Enlace de registro */
 .register-link {
   display: block;
   margin-top: 15px;

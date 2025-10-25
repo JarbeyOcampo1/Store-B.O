@@ -1,0 +1,123 @@
+/* Paleta de colores */
+:root {
+  --primary-color: #ff882e; 
+  --secondary-color: #4184c7; 
+  --background-light: #ece5e5; 
+  --text-dark: #333;
+  --input-bg: #ffffff;
+  --input-border: var(--secondary-color);
+  --input-focus-border: var(--primary-color);
+  --input-focus-shadow: rgba(255, 136, 46, 0.4);
+}
+
+/* Contenedor del formulario */
+.cliente-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grupo de elementos del formulario */
+.cliente-form-group,
+.plan-form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas */
+.cliente-label,
+.plan-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Inputs y Selects */
+.cliente-input,
+.plan-select {
+  padding: 0.75rem 1rem;
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border); 
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: var(--text-dark);
+  box-shadow: 0 0 5px rgba(65, 132, 199, 0.2); 
+}
+
+/* Focus */
+.cliente-input:focus,
+.plan-select:focus {
+  border-color: var(--input-focus-border); 
+  box-shadow: 0 0 8px var(--input-focus-shadow); 
+  outline: none;
+}
+
+/* Opciones del select */
+.plan-select-option {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+/* Botón */
+.cliente-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+/* Hover del botón */
+.cliente-button:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+/* Grupo del formulario */
+.plan-form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiqueta */
+.plan-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Select */
+.plan-select {
+  padding: 0.75rem 1rem;
+  background-color: var(--input-bg);
+  border: 2px solid var(--secondary-color); 
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: var(--text-dark);
+  box-shadow: 0 0 5px rgba(65, 132, 199, 0.2); 
+}
+
+/* Focus del select */
+.plan-select:focus {
+  border-color: var(--primary-color); 
+  box-shadow: 0 0 8px rgba(255, 136, 46, 0.4); 
+  outline: none;
+}
+
+/* Opciones del select */
+.plan-select-option {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}

@@ -50,6 +50,13 @@
   cursor: pointer;
 }
 
+/* Efecto hover del botón */
+.salir-btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
 /* Título animado */
 .title-container {
   text-align: center;
@@ -121,6 +128,13 @@
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Efecto hover del botón */
+.cta-btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 /* Imagen del carrusel */
