@@ -2,7 +2,7 @@ import ClienteRow from "./ClienteRow";
 import './ClienteTable.css';
 
 function ClienteTable({clientes, onEdit, onDelete}) {
-
+ 
     return (
         <div className="cliente-table-container">
             {/* Tabla */}

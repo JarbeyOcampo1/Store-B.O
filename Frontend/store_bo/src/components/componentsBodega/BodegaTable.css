@@ -1,0 +1,74 @@
+/*  TABLA */
+.bodega-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.bodega-table-header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.bodega-th {
+  padding: 12px 16px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.bodega-table-body td {
+  padding: 10px 16px;
+  text-align: center;
+  color: var(--text-dark);
+  border-bottom: 1px solid #ddd;
+}
+
+.bodega-table-body tr:hover {
+  background-color: rgba(65, 132, 199, 0.1);
+}
+
+/*  ACCIONES  */
+.bodega-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bodega-button-edit,
+.bodega-button-delete {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bodega-button-edit {
+  background-color: var(--secondary-color);
+  color: white;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 0 5px rgba(65, 132, 199, 0.3);
+}
+
+.bodega-button-edit:hover {
+  background-color: white;
+  color: var(--secondary-color);
+}
+
+.bodega-button-delete {
+  background-color: #e74c3c;
+  color: white;
+  border: 2px solid #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+}
+
+.bodega-button-delete:hover {
+  background-color: white;
+  color: #e74c3c;
+}

@@ -1,0 +1,44 @@
+/* ACCIONES EN LA FILA */
+.bodega-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/*  BOTÓN EDITAR */
+.bodega-button-edit {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 0 5px rgba(65, 132, 199, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bodega-button-edit:hover {
+  background-color: white;
+  color: var(--secondary-color);
+}
+
+/*  BOTÓN ELIMINAR  */
+.bodega-button-delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bodega-button-delete:hover {
+  background-color: white;
+  color: #e74c3c;
+}

@@ -49,8 +49,8 @@ function Principal() {
     const handleLogout = closeSession();
 
     const handleRedirect = () => {
-        if (currentIndex === 0) navigate("/Cliente");
-        if (currentIndex === 1) navigate("/Bodega");
+        if (currentIndex === 0) navigate("/Bodega");
+        if (currentIndex === 1) navigate("/Cliente");
     };
 
     return (

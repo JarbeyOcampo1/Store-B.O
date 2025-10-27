@@ -25,10 +25,10 @@ public class Bodega {
     private String nombreB;
     private String ubicacionB;
     private String tamanoB;
-    private String preacioB;
+    private String precioB;
     private String fechaRegistroB;
-    private String descripcionC;
-    private String estadoC;
+    private String descripcionB;
+    private String estadoB;
 
     //Relacion con Cliente (muchos a uno)
     @ManyToOne
