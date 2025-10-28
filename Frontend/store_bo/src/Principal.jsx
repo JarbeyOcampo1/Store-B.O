@@ -51,6 +51,7 @@ function Principal() {
     const handleRedirect = () => {
         if (currentIndex === 0) navigate("/Bodega");
         if (currentIndex === 1) navigate("/Cliente");
+        if (currentIndex === 2) navigate("/Informe");
     };
 
     return (
@@ -65,7 +66,7 @@ function Principal() {
                 <ul>
                     <li><Link to="/Cliente">Clientes</Link></li>
                     <li><Link to="/Bodega">Bodegas</Link></li>
-                    <li>Informes</li>
+                    <li><Link to="/Informe">Informes</Link></li>
                     <li><button onClick={handleLogout} className="salir-btn"> Salir</button></li>
                 </ul>
             </nav>

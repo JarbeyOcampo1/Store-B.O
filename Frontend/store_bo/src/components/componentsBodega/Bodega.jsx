@@ -10,7 +10,7 @@ import './Bodega.css';
 function Bodega() {
     // Inicializamos la función de navegación para salir de la sesión
     const handleLogout = closeSession();
-
+ 
     // Crear un estado para almacenar los datos de bodegas
     const [bodegas, setBodegas] = useState([]);
     const [editingBodega, setEditingBodega] = useState(null);
@@ -77,7 +77,7 @@ function Bodega() {
                 <ul>
                 <li><Link to="/Cliente">Clientes</Link></li>
                 <li><Link to="/Bodega">Bodegas</Link></li>
-                <li><Link to="/Informes">Informes</Link></li>
+                <li><Link to="/Informe">Informes</Link></li>
                 <li><button onClick={handleLogout} className="salir-btn">Salir</button></li>
                 </ul>
             </nav>

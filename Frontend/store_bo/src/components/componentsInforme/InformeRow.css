@@ -1,0 +1,63 @@
+/* Fila de la tabla de informes */
+.informe-table-row {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Celdas de contenido */
+.informe-table-row td {
+  padding: 10px 16px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* Contenedor de botones de acción */
+.informe-actions-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Botón de editar */
+.informe-button-edit {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(65, 132, 199, 0.3);
+}
+
+/* Hover botón editar */
+.informe-button-edit:hover {
+  background-color: white;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Botón de eliminar */
+.informe-button-delete {
+  background-color: var(--danger-color);
+  border: 2px solid var(--danger-color);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+}
+
+/* Hover botón eliminar */
+.informe-button-delete:hover {
+  background-color: white;
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}

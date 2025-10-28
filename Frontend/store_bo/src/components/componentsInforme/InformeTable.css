@@ -1,0 +1,90 @@
+/* Contenedor principal de la tabla de informes */
+.informe-table-container {
+  max-width: 90%;
+  margin: 30px auto;
+  background-color: var(--background-light);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Estructura general de la tabla */
+.informe-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-bg);
+  border: 2px solid var(--table-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Encabezado de la tabla */
+.informe-table-header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.informe-table-header .informe-table-row {
+  text-align: left;
+}
+
+/* Títulos de las columnas */
+.informe-th {
+  padding: 12px 16px;
+  font-weight: bold;
+  border-bottom: 2px solid var(--table-border);
+  text-align: center;
+}
+
+/* Cuerpo de la tabla */
+.informe-table-body .informe-table-row {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en las filas */
+.informe-table-body .informe-table-row:hover {
+  background-color: var(--table-hover);
+}
+
+/* Celdas de contenido */
+.informe-table-body td {
+  padding: 10px 16px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* Celda de acciones */
+.informe-table-body td:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Botones de acción */
+.informe-action-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover de botones */
+.informe-action-btn:hover {
+  background-color: white;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+/* Mensaje cuando no hay informes */
+.informe-table-body td[colspan] {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: var(--secondary-color);
+}

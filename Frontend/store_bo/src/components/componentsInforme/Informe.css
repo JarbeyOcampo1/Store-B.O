@@ -1,0 +1,63 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+/* ===== TÍTULOS ===== */
+.informe-h1-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.informe-h2-form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 30px 0 15px;
+  font-weight: bold;
+}
+
+/* ===== NAVBAR ===== */
+.Container_Principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--background-light);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo-container img {
+  height: 60px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.salir-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.salir-btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}

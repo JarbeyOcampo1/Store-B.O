@@ -76,7 +76,7 @@ function Cliente() {
                 <ul>
                 <li><Link to="/Cliente">Clientes</Link></li>
                 <li><Link to="/Bodega">Bodegas</Link></li>
-                <li><Link to="/Informes">Informes</Link></li>
+                <li><Link to="/Informe">Informes</Link></li>
                 <li><button onClick={handleLogout} className="salir-btn">Salir</button></li>
                 </ul>
             </nav>

@@ -1,9 +1,11 @@
 /* ACCIONES EN LA FILA */
+
 .bodega-actions-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: center; /* Centra los botones */
+  gap: 12px; /* Espacio entre los botones */
 }
+
 
 /*  BOTÓN EDITAR */
 .bodega-button-edit {

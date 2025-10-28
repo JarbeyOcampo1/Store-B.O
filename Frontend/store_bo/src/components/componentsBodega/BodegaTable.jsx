@@ -24,14 +24,14 @@ function BodegaTable({bodegas, onEdit, onDelete}) {
                 </thead>
                 {/* Tabla donde van las filas de bodegas */}
                 <tbody className="bodega-table-body">
-                       {/* Si existen bodegas y hay al menos uno en el array */}
+                    {/* Si existen bodegas y hay al menos uno en el array */}
                     {bodegas && bodegas.length > 0 ? (
                         bodegas.map((bodega) => (
                             <BodegaRow key={bodega.bodegaID} bodega={bodega} onEdit={onEdit} onDelete={onDelete}/>
                         ))
                     ) : (
                         <tr>
-                            <td colSpan={9}> No hay bodegas disponibles </td>
+                            <td colSpan={10}> No hay bodegas disponibles </td>
                         </tr>
                     )}
                 </tbody>

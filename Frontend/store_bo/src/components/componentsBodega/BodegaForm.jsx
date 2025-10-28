@@ -19,11 +19,11 @@ function BodegaForm({onSubmit, initialBo}) {
     // Si initialBo existe, llenamos el formulario con sus valores (modo edición)
     useEffect (() => {
 
-        // Cargar clientes y planes desde la API
+        // Cargar clientes  desde la API
         fetch('http://localhost:8080/api/clientes')
-        // Convertimos la respuesta a JSON y actualizamos el estado de clientes
+        // Convertimos la respuesta a JSON y actualizamos el estado de bodega
         .then((response) => response.json())
-        // Convertimos la respuesta a JSON y actualizamos el estado de clientes
+        // Convertimos la respuesta a JSON y actualizamos el estado de bodega
         .then((data) => {
             // Verificamos si la respuesta es un array o un objeto con una propiedad 'content'
             const clientesData = Array.isArray(data) ? data : data.content;
@@ -77,8 +77,14 @@ function BodegaForm({onSubmit, initialBo}) {
                 <input className="bodega-input" type="text" placeholder="Ubicación de la bodega" value={ubicacionB} onChange={(e) => setUbicacionB(e.target.value)} required/>
             </div>
             <div className="bodega-form-group">
+                {/* Campo de selección para el estado */}
                 <label className="bodega-label"> Tamaño </label>
-                <input className="bodega-input" type="text" placeholder="Tamaño de la bodega" value={tamanoB} onChange={(e) => setTamanoB(e.target.value)} required/>
+                <select className="bodega-select" value={tamanoB} onChange={(e) => setTamanoB(e.target.value)} required>
+                    <option className="bodega-select-option" value=""> Seleccionar </option>
+                    <option className="bodega-select-option" value="Grande"> Grande </option>
+                    <option className="bodega-select-option" value="Mediana"> Mediana </option>
+                    <option className="bodega-select-option" value="Pequeña"> Pequeña </option>
+                </select>
             </div>
             <div className="bodega-form-group">
                 <label className="bodega-label"> Precio </label>

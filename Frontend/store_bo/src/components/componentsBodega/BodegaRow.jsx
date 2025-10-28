@@ -1,3 +1,5 @@
+import './BodegaRow.css';
+
 const BodegaRow = ({bodega, onEdit, onDelete}) => {
     // Función para manejar el evento de editar
     const handleEdit = () => {

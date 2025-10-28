@@ -1,12 +1,4 @@
 /* ===== CONTENEDOR PRINCIPAL ===== */
-.bodega-container-principal {
-  max-width: 90%;
-  margin: 30px auto;
-  background-color: var(--background-light);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
 /* ===== TÍTULOS ===== */
 .bodega-h1-title {

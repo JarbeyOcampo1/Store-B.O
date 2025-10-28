@@ -4,7 +4,7 @@ import Principal from './Principal.jsx'
 import Logins from './components/componentsLogin/Logins.jsx'
 import Cliente from './components/componentsCliente/Cliente.jsx'
 import Bodega from './components/componentsBodega/Bodega.jsx'
-
+import Informe from './components/componentsInforme/Informe.jsx'
 function App() {
 
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path='/Logins' element={<Logins />} />
         <Route path='/Cliente' element={<Cliente />} />
         <Route path='/Bodega' element={<Bodega />} />
+        <Route path='/Informe' element={<Informe />} />
       </Routes>
     </BrowserRouter>
   )
