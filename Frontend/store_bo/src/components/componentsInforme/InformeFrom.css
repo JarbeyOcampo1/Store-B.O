@@ -1,8 +1,8 @@
-/* ===== PALETA ===== */
+/*  PALETA  */
 :root {
-  --primary-color: #ff882e; /* Naranja cálido */
-  --secondary-color: #4184c7; /* Azul cálido */
-  --background-light: #ece5e5; /* Gris claro */
+  --primary-color: #ff882e; 
+  --secondary-color: #4184c7; 
+  --background-light: #ece5e5; 
   --text-dark: #333;
   --input-bg: #ffffff;
   --input-border: var(--secondary-color);
@@ -10,7 +10,7 @@
   --input-focus-shadow: rgba(255, 136, 46, 0.4);
 }
 
-/* ===== CONTENEDOR DEL FORMULARIO ===== */
+/*  CONTENEDOR DEL FORMULARIO  */
 .informe-form {
   max-width: 600px;
   margin: 0 auto;
@@ -20,21 +20,21 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== GRUPO DE CAMPOS ===== */
+/*  GRUPO DE CAMPOS = */
 .informe-form-group {
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
-/* ===== ETIQUETAS ===== */
+/*  ETIQUETAS  */
 .informe-label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--text-dark);
 }
 
-/* ===== INPUTS Y SELECTS ===== */
+/*  INPUTS Y SELECTS  */
 .informe-input,
 .informe-select {
   padding: 0.75rem 1rem;
@@ -47,7 +47,7 @@
   box-shadow: 0 0 5px rgba(65, 132, 199, 0.2);
 }
 
-/* ===== FOCUS ===== */
+/*  FOCUS  */
 .informe-input:focus,
 .informe-select:focus {
   border-color: var(--input-focus-border);
@@ -55,13 +55,13 @@
   outline: none;
 }
 
-/* ===== OPCIONES DEL SELECT ===== */
+/*  OPCIONES DEL SELECT  */
 .informe-select-option {
   background-color: var(--background-light);
   color: var(--text-dark);
 }
 
-/* ===== BOTÓN ===== */
+/*  BOTÓN  */
 .informe-button {
   background-color: var(--primary-color);
   color: white;
@@ -74,7 +74,7 @@
   font-weight: bold;
 }
 
-/* ===== HOVER DEL BOTÓN ===== */
+/* HOVER DEL BOTÓN  */
 .informe-button:hover {
   background-color: white;
   color: var(--primary-color);

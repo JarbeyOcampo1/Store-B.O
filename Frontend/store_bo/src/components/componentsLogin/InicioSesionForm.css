@@ -28,8 +28,8 @@
 /* Contenedor de inputs y labels */
 .form-group {
   display: flex;
-  flex-direction: column; /* Coloca el label arriba del input */
-  align-items: center; /* Centra ambos horizontalmente */
+  flex-direction: column;
+  align-items: center; 
   margin-bottom: 15px;
 }
 
@@ -43,12 +43,12 @@
 
 /* Estilo de los inputs */
 .form-group input {
-  width: 80%; /* Mismo ancho que el botón */
+  width: 80%; 
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
-  text-align: center; /* Centra el texto dentro del input */
+  text-align: center; 
 }
 
 /* Botón de envío */

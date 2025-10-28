@@ -15,7 +15,6 @@ const InformeRow = ({informe, onEdit, onDelete}) => {
         onDelete(informe.informeID);
     };
 
-
     // Renderizamos la fila de la informe como una fila de tabla (<tr>)
     return (
         <tr>

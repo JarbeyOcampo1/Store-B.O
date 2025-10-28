@@ -1,13 +1,11 @@
-/* ACCIONES EN LA FILA */
-
+/* Acciones dentro de la fila */
 .bodega-actions-row {
   display: flex;
-  justify-content: center; /* Centra los botones */
-  gap: 12px; /* Espacio entre los botones */
+  justify-content: center; 
+  gap: 12px; 
 }
 
-
-/*  BOTÓN EDITAR */
+/* Botón de edición */
 .bodega-button-edit {
   background-color: var(--secondary-color);
   color: white;
@@ -21,12 +19,13 @@
   transition: all 0.3s ease;
 }
 
+/* Efecto hover del botón editar */
 .bodega-button-edit:hover {
   background-color: white;
   color: var(--secondary-color);
 }
 
-/*  BOTÓN ELIMINAR  */
+/* Botón de eliminación */
 .bodega-button-delete {
   background-color: #e74c3c;
   color: white;
@@ -40,6 +39,7 @@
   transition: all 0.3s ease;
 }
 
+/* Efecto hover del botón eliminar */
 .bodega-button-delete:hover {
   background-color: white;
   color: #e74c3c;

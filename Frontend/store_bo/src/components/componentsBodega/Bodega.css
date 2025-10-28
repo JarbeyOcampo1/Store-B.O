@@ -1,6 +1,4 @@
-/* ===== CONTENEDOR PRINCIPAL ===== */
-
-/* ===== TÍTULOS ===== */
+/* Título principal */
 .bodega-h1-title {
   text-align: center;
   font-size: 2.2rem;
@@ -9,6 +7,7 @@
   font-weight: bold;
 }
 
+/* Título secundario del formulario */
 .bodega-h2-form-title {
   text-align: center;
   font-size: 1.5rem;

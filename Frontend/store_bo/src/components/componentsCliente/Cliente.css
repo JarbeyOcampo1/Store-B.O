@@ -1,114 +1,124 @@
-/* PALETA DE COLORES  */
+/* PALETA DE COLORES */
 :root {
-  --primary-color: #ff882e;
-  --secondary-color: #4184c7;
-  --background-light: #ece5e5;
-  --text-dark: #333;
+  --primary-color: #ff882e; 
+  --secondary-color: #4184c7; 
+  --background-light: #ece5e5; 
+  --text-dark: #333; 
 }
 
-/*  HEADER */
+/* HEADER */
 .Container_Principal {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 15px 30px; 
   background-color: var(--background-light);
   width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
+/* Logo */
 .logo-container img {
-  height: 60px;
+  height: 60px; 
 }
 
+/* Navegación */
 .navbar ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  align-items: center;
+  display: flex; 
+  gap: 20px; 
+  list-style: none; 
+  align-items: center; 
 }
 
+/* Enlaces del menú */
 .navbar li a {
-  text-decoration: none;
-  color: var(--secondary-color);
+  text-decoration: none; 
+  color: var(--secondary-color); 
   font-weight: 500;
 }
 
+/* Botón de salir */
 .salir-btn {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--primary-color); 
+  color: white; 
   padding: 8px 16px;
   border: none;
-  border-radius: 20px;
+  border-radius: 20px; 
   font-weight: bold;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
-/*  TÍTULOS*/
+/* TÍTULOS */
 .title-container,
 .cliente-h1-title,
 .cliente-h2-edit-create {
-  text-align: center;
-  font-weight: bold;
+  text-align: center; 
+  font-weight: bold; 
 }
 
+/* Título principal animado o destacado */
 .title-container h1 {
-  font-size: 2rem;
-  color: var(--primary-color);
+  font-size: 2rem; 
+  color: var(--primary-color); 
 }
 
+/* Título principal de la página */
 .cliente-h1-title {
-  font-size: 2.2rem;
-  color: var(--secondary-color);
-  margin: 30px 0 20px;
+  font-size: 2.2rem; 
+  color: var(--secondary-color); 
+  margin: 30px 0 20px; 
 }
 
+/* Subtítulos o encabezados secundarios */
 .cliente-h2-edit-create {
-  font-size: 1.5rem;
+  font-size: 1.5rem; 
   color: var(--secondary-color);
-  margin: 40px 0 15px;
+  margin: 40px 0 15px; 
 }
 
-/*  INPUTS  */
+/* INPUTS */
 .form-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 15px;
+  flex-direction: column; 
+  align-items: center; 
+  margin-bottom: 15px; 
 }
 
+/* Etiquetas de los campos */
 .form-group label {
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--text-dark);
+  margin-bottom: 8px; 
+  font-weight: 500; 
+  color: var(--text-dark); 
 }
 
+/* Campos de entrada */
 .form-group input {
-  width: 80%;
-  padding: 12px;
-  border: 1px solid #ccc;
+  width: 80%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
   border-radius: 8px;
-  text-align: center;
+  text-align: center; 
 }
 
-/*  BOTONES */
+/* BOTONES */
 .form-button,
 .cancel-button,
 .cta-btn {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 12px 20px;
+  background-color: var(--primary-color); 
+  color: white; 
+  padding: 12px 20px; 
   border: none;
-  border-radius: 20px;
+  border-radius: 20px; 
   font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer; 
+  transition: background 0.3s ease, color 0.3s ease; 
 }
 
+/* Efecto hover para los botones */
 .form-button:hover,
 .cancel-button:hover,
 .cta-btn:hover {
   background-color: white;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  color: var(--primary-color); 
+  border: 2px solid var(--primary-color); 
 }

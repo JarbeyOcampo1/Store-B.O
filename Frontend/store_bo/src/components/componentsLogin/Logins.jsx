@@ -13,7 +13,6 @@ function Logins () {
         fetchLogin();
     },[]); // Solo se ejecuta una vez cuando el componente se monta.
 
-
     // recorre la lista de logins y retorna una respuesta 
     const fetchLogin = async () => {
         try {
