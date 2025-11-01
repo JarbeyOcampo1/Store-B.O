@@ -1,3 +1,4 @@
+import InformeIndividualPDF from './InformeIndividualPDF';
 import './InformeRow.css';
 
 const InformeRow = ({informe, onEdit, onDelete}) => {
@@ -36,6 +37,8 @@ const InformeRow = ({informe, onEdit, onDelete}) => {
                     {/* Botones para editar y eliminar */}
                     <button className="informe-button-edit" onClick={handleEdit}> Editar </button>
                     <button className="informe-button-delete" onClick={handleDelete}> Eliminar </button>
+                    {/* Botón para generar el PDF del informe individual */}
+                    <InformeIndividualPDF informeData={informe}/>
                 </div>
             </td>
         </tr>

@@ -83,7 +83,7 @@ function Informe() {
             </nav>
             </div>
             <div className="informe-container-principal">
-                <h1 className="informe-h1-title"> Gestión de Bodegas </h1>
+                <h1 className="informe-h1-title"> Informe de Bodegas </h1>
                 <InformeTable informes={informes} onEdit={handleEditInforme} onDelete={handleDeleteInforme} />
                 <h2 className="informe-h2-form-title"> {editingInforme ? "Editar Informe" : "Crear Nueva Informe"} </h2>
                 {/* Formulario para crear o editar informe */}
