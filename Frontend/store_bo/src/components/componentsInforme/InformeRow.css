@@ -86,3 +86,16 @@
   color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
+/* Contenedor de controles del informe */
+.informe-controls {
+    display: flex;
+    justify-content: flex-start; 
+    margin-bottom: 20px;
+    padding-left: 50px;  
+}
+
+/* Espaciado entre los controles */
+.informe-controls > * {
+    margin-right: 10px;
+}

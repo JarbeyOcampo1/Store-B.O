@@ -18,23 +18,21 @@ function InformeIndividualPDF({ informeData }) {
         doc.text("Factura Oficial de Store B.O", 80, 28);
         doc.line(10, 40, 200, 40);
 
-        // Fecha del reporte
+        //Fecha del reporte
         const fechaActual = new Date().toLocaleDateString();
         doc.setFontSize(10);
         doc.text(`Fecha de emisión: ${fechaActual}`, 150, 35);
 
-        // ===============================
+
         // DETALLES DEL CLIENTE
-        // ===============================
         doc.setFontSize(12);
         doc.text("Detalles del cliente:", 20, 50);
         doc.setFontSize(10);
         doc.text(`Nombre: ${informeData.cliente?.nombreC || 'N/A'} ${informeData.cliente?.apellidoC || 'N/A'}`, 20, 58);
         doc.text(`Cédula: ${informeData.cliente?.cedulaC || 'N/A'}`, 20, 66);
 
-        // ===============================
+
         // DETALLES DE LA BODEGA
-        // ===============================
         doc.setFontSize(12);
         doc.text("Detalles de la bodega:", 20, 80);
         doc.setFontSize(10);
@@ -42,18 +40,14 @@ function InformeIndividualPDF({ informeData }) {
         doc.text(`Ubicación: ${informeData.bodega?.ubicacionB || 'N/A'}`, 20, 96);
         doc.text(`Estado: ${informeData.estadoI || 'N/A'}`, 20, 104);
 
-        // ===============================
         // DETALLES DEL EMPLEADO
-        // ===============================
         doc.setFontSize(12);
         doc.text("Detalles del empleado:", 20, 118);
         doc.setFontSize(10);
         doc.text(`Nombre: ${informeData.login?.usuarioLogin || 'N/A'}`, 20, 126);
         doc.text(`Cargo: ${informeData.login?.cargo || 'N/A'}`, 20, 134);
 
-        // ===============================
         // PIE DE PÁGINA (ALINEADO A LA IZQUIERDA)
-        // ===============================
         doc.setFontSize(10);
         doc.text("Gracias por confiar en STORE B.O", 15, 280);
         doc.text("Store B.O - Bodegas y oficinas a su alcance", 15, 285);

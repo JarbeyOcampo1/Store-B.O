@@ -96,7 +96,7 @@ function InformeForm ({onSubmit, initialIn}) {
             </div>
             <div className="informe-form-group">
                 {/* Campo de selección para el estado */}
-                <label className="informe-label"> Tamaño </label>
+                <label className="informe-label"> Estado </label>
                 <select className="informe-select" value={estadoI} onChange={(e) => setEstadoI(e.target.value)} required>
                     <option className="informe-select-option" value=""> Seleccionar </option>
                     <option className="informe-select-option" value="Finalizado"> Finalizado </option>
@@ -157,4 +157,4 @@ function InformeForm ({onSubmit, initialIn}) {
     );
 };
 
-export default InformeForm
+export default InformeForm;
