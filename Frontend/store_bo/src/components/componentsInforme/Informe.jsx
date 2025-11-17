@@ -6,6 +6,7 @@ import axios from "axios";
 import InformeForm from './InformeFrom';
 import InformeTable from './InformeTable';
 import './Informe.css';
+import InformeGeneralPDF from './InformeGeneralPDF';
 
 function Informe() {
     // Inicializamos la función de navegación para salir de la sesión
@@ -84,10 +85,13 @@ function Informe() {
             </div>
             <div className="informe-container-principal">
                 <h1 className="informe-h1-title"> Informe de Bodegas </h1>
+                <div className="informe-controls">
+                    <InformeGeneralPDF informes={informes}/>
+                </div>
                 <InformeTable informes={informes} onEdit={handleEditInforme} onDelete={handleDeleteInforme} />
                 <h2 className="informe-h2-form-title"> {editingInforme ? "Editar Informe" : "Crear Nueva Informe"} </h2>
                 {/* Formulario para crear o editar informe */}
-                <InformeForm onSubmit={CreateOrUpdateInforme} initialBo={editingInforme} />
+                <InformeForm onSubmit={CreateOrUpdateInforme} initialIn={editingInforme} />
                 {/* Tabla que muestra la lista de informe */}
             </div>
        </div> 

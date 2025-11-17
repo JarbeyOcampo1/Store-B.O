@@ -4,7 +4,7 @@ import './InformeRow.css';
 const InformeRow = ({informe, onEdit, onDelete}) => {
     // Función para manejar el evento de editar
     const handleEdit = () => {
-        console.log("Editando informe:", bodega);
+        console.log("Editando informe:", informe);
         // Llama a la función onEdit pasando la bodega completa
         onEdit(informe);
     };
